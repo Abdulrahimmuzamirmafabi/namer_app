@@ -7,7 +7,7 @@ class UnFavoritesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
 
-    if (appState.favorites.isEmpty) {
+    if (appState.unfavorites.isEmpty) {
       return Center(
         child: Text('No Unfavorites yet.'),
       );
@@ -18,9 +18,9 @@ class UnFavoritesPage extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(20),
           child: Text('You have '
-              '${appState.favorites.length} Unfavorites:'),
+              '${appState.unfavorites.length} Unfavorites:'),
         ),
-        for (var pair in appState.favorites)
+        for (var pair in appState.unfavorites)
           ListTile(
             leading: Icon(Icons.thumb_down),
             title: Text(pair.asLowerCase),

@@ -16,6 +16,14 @@ class GeneratorPage extends StatelessWidget {
       icon = Icons.favorite_border;
     }
 
+    IconData icon2;
+
+    if (appState.unfavorites.contains(pair)) {
+      icon2 = Icons.thumb_down;
+    } else {
+      icon2 = Icons.thumb_down_outlined;
+    }
+
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -44,7 +52,7 @@ class GeneratorPage extends StatelessWidget {
                 onPressed: () {
                   appState.toggleUnFavorite();
                 },
-                icon: Icon(icon),
+                icon: Icon(icon2),
                 label: Text('DisLike'),
               ),
             ],
